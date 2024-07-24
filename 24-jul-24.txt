@@ -1,0 +1,141 @@
+mysql> create table emplo4(eno int primary key , ename varchar(50) not null,designation varchar(50) not null, salary float not null, date_of_joining varchar(50) not null, email varchar(50) not null, pno varchar(50) not null, city varchar(50) not null);
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> insert into emplo4 values(1,'harsh','ceo',3500000,'11/08/2003','mubada@gmail.com','123456789','bhigwan');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into emplo4 values(2,'pratiksha','manager',350000,'19/07/2003','pratiksha@gmail.com','123456788','shirval');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into emplo4 values(3,'namrata','employee',250000,'05/10/2021','namrata@gmail.com','1234567777','sangali');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into emplo4 values(4,'namrata','assistant',25000,'15/10/2022','namrata@gmail.com','1234567779','sangam');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into emplo4 values(5,'tejas','sr.assistant',35000,'23/11/2001','tejas@gmail.com','1234567789','sangam');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into emplo4 values(6,'tanjila','sr.manager',75000,'26/11/2007','tanjila@gmail.com','1234560789','karad');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into emplo4 values(7,'siya','sr.manager',75000,'16/01/2017','siya@gmail.com','1230560789','pune');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select*from emplo4;
++-----+-----------+--------------+---------+-----------------+---------------------+------------+---------+
+| eno | ename     | designation  | salary  | date_of_joining | email               | pno        | city    |
++-----+-----------+--------------+---------+-----------------+---------------------+------------+---------+
+|   1 | harsh     | ceo          | 3500000 | 11/08/2003      | mubada@gmail.com    | 123456789  | bhigwan |
+|   2 | pratiksha | manager      |  350000 | 19/07/2003      | pratiksha@gmail.com | 123456788  | shirval |
+|   3 | namrata   | employee     |  250000 | 05/10/2021      | namrata@gmail.com   | 1234567777 | sangali |
+|   4 | namrata   | assistant    |   25000 | 15/10/2022      | namrata@gmail.com   | 1234567779 | sangam  |
+|   5 | tejas     | sr.assistant |   35000 | 23/11/2001      | tejas@gmail.com     | 1234567789 | sangam  |
+|   6 | tanjila   | sr.manager   |   75000 | 26/11/2007      | tanjila@gmail.com   | 1234560789 | karad   |
+|   7 | siya      | sr.manager   |   75000 | 16/01/2017      | siya@gmail.com      | 1230560789 | pune    |
++-----+-----------+--------------+---------+-----------------+---------------------+------------+---------+
+7 rows in set (0.00 sec)
+
+***************************************************************************************************************************************
+
+LIKE 
+
+1) DISPLAY ALL RECORDS START WITH S
+
+mysql> select * from emplo4 where ename like 's%';
++-----+-------+-------------+--------+-----------------+----------------+------------+------+
+| eno | ename | designation | salary | date_of_joining | email          | pno        | city |
++-----+-------+-------------+--------+-----------------+----------------+------------+------+
+|   7 | siya  | sr.manager  |  75000 | 16/01/2017      | siya@gmail.com | 1230560789 | pune |
++-----+-------+-------------+--------+-----------------+----------------+------------+------+
+1 row in set (0.07 sec)
+
+*****************************************************************************************************************************************
+
+2)Display name of employee whose name start with a and ends with a and designation is mr.manager and he belong to pune or Mumbai or in Nagpur city
+
+mysql> select ename from emplo4 where ename like 'p%a' and designation='manager' and city in('shirval','pune','mumbai');
++-----------+
+| ename     |
++-----------+
+| pratiksha |
++-----------+
+1 row in set (0.00 sec)
+
+**************************************************************************************************************************************
+
+3) Display details of employee whose email contains and salry between 1000 to 20000 or employee id is either 1,2,3,4,9
+
+mysql> select * from emplo4 where (email like '%.%') and (salary between 10000 and 200000) or (eno in(1,2,3,4,5));
++-----+-----------+--------------+---------+-----------------+---------------------+------------+---------+
+| eno | ename     | designation  | salary  | date_of_joining | email               | pno        | city    |
++-----+-----------+--------------+---------+-----------------+---------------------+------------+---------+
+|   1 | harsh     | ceo          | 3500000 | 11/08/2003      | mubada@gmail.com    | 123456789  | bhigwan |
+|   2 | pratiksha | manager      |  350000 | 19/07/2003      | pratiksha@gmail.com | 123456788  | shirval |
+|   3 | namrata   | employee     |  250000 | 05/10/2021      | namrata@gmail.com   | 1234567777 | sangali |
+|   4 | namrata   | assistant    |   25000 | 15/10/2022      | namrata@gmail.com   | 1234567779 | sangam  |
+|   5 | tejas     | sr.assistant |   35000 | 23/11/2001      | tejas@gmail.com     | 1234567789 | sangam  |
+|   6 | tanjila   | sr.manager   |   75000 | 26/11/2007      | tanjila@gmail.com   | 1234560789 | karad   |
+|   7 | siya      | sr.manager   |   75000 | 16/01/2017      | siya@gmail.com      | 1230560789 | pune    |
++-----+-----------+--------------+---------+-----------------+---------------------+------------+---------+
+7 rows in set (0.00 sec)
+************************************************************************************************************************************
+
+4)Display name ,designation and phoneno of employee where name having third character is a and ends with t and also email having @ character and . character and phoneno is = 123456789.
+
+mysql> select ename,designation,pno from emplo4 where (ename like '__a%t') and (email like '%@%.%) or pno='123456789';
+
+
+
+*********************************************************************************************************************************
+
+order by
+
+1)display all details of employee  from employee order by city desc;
+
+mysql> select * from emplo4 order by city desc;
++-----+-----------+--------------+---------+-----------------+---------------------+------------+---------+
+| eno | ename     | designation  | salary  | date_of_joining | email               | pno        | city    |
++-----+-----------+--------------+---------+-----------------+---------------------+------------+---------+
+|   2 | pratiksha | manager      |  350000 | 19/07/2003      | pratiksha@gmail.com | 123456788  | shirval |
+|   4 | namrata   | assistant    |   25000 | 15/10/2022      | namrata@gmail.com   | 1234567779 | sangam  |
+|   5 | tejas     | sr.assistant |   35000 | 23/11/2001      | tejas@gmail.com     | 1234567789 | sangam  |
+|   3 | namrata   | employee     |  250000 | 05/10/2021      | namrata@gmail.com   | 1234567777 | sangali |
+|   7 | siya      | sr.manager   |   75000 | 16/01/2017      | siya@gmail.com      | 1230560789 | pune    |
+|   6 | tanjila   | sr.manager   |   75000 | 26/11/2007      | tanjila@gmail.com   | 1234560789 | karad   |
+|   1 | harsh     | ceo          | 3500000 | 11/08/2003      | mubada@gmail.com    | 123456789  | bhigwan |
++-----+-----------+--------------+---------+-----------------+---------------------+------------+---------+
+7 rows in set (0.07 sec)
+
+mysql> select * from emplo4 order by city asc;
++-----+-----------+--------------+---------+-----------------+---------------------+------------+---------+
+| eno | ename     | designation  | salary  | date_of_joining | email               | pno        | city    |
++-----+-----------+--------------+---------+-----------------+---------------------+------------+---------+
+|   1 | harsh     | ceo          | 3500000 | 11/08/2003      | mubada@gmail.com    | 123456789  | bhigwan |
+|   6 | tanjila   | sr.manager   |   75000 | 26/11/2007      | tanjila@gmail.com   | 1234560789 | karad   |
+|   7 | siya      | sr.manager   |   75000 | 16/01/2017      | siya@gmail.com      | 1230560789 | pune    |
+|   3 | namrata   | employee     |  250000 | 05/10/2021      | namrata@gmail.com   | 1234567777 | sangali |
+|   4 | namrata   | assistant    |   25000 | 15/10/2022      | namrata@gmail.com   | 1234567779 | sangam  |
+|   5 | tejas     | sr.assistant |   35000 | 23/11/2001      | tejas@gmail.com     | 1234567789 | sangam  |
+|   2 | pratiksha | manager      |  350000 | 19/07/2003      | pratiksha@gmail.com | 123456788  | shirval |
++-----+-----------+--------------+---------+-----------------+---------------------+------------+---------+
+7 rows in set (0.00 sec)
+*****************************************************************************************************************************
+
+2)Dsplay details of employee by descending oreder whose name is contains 5 character
+
+mysql> select * from emplo4  where ename like '_____' order by city desc;
++-----+-------+--------------+---------+-----------------+------------------+------------+---------+
+| eno | ename | designation  | salary  | date_of_joining | email            | pno        | city    |
++-----+-------+--------------+---------+-----------------+------------------+------------+---------+
+|   5 | tejas | sr.assistant |   35000 | 23/11/2001      | tejas@gmail.com  | 1234567789 | sangam  |
+|   1 | harsh | ceo          | 3500000 | 11/08/2003      | mubada@gmail.com | 123456789  | bhigwan |
++-----+-------+--------------+---------+-----------------+------------------+------------+---------+
+2 rows in set (0.00 sec)
+
+****************************************************************************************************************************
+
+
+
+
+

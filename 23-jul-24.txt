@@ -1,0 +1,271 @@
+1)DISPLAY ALL DTAILS OF EMPLOYEE WHOSE NAMEN IS MR.ROY
+
+mysql> select * from employee3 where ename='Mr.Roy';
++-----+--------+-------------+--------+-----------------+------------------+--------+----------+
+| eno | ename  | designation | salary | date_of_joining | email            | e_city | phone_no |
++-----+--------+-------------+--------+-----------------+------------------+--------+----------+
+|   4 | Mr.Roy | manager     |  70000 | 15/06/2019      | mr.roy@gmail.com | Mumbai | 12345678 |
++-----+--------+-------------+--------+-----------------+------------------+--------+----------+
+1 row in set (0.00 sec)
+
+*********************************************************************************************************************************
+
+2) DISPLAY SALARY AND DESIGNAITON OF EMPLOYEE WHERE ID IS 4
+
+mysql> select salary , designation from employee3 where eno=4;
++--------+-------------+
+| salary | designation |
++--------+-------------+
+|  70000 | manager     |
++--------+-------------+
+1 row in set (0.00 sec)
+
+***********************************************************************************************************************************
+
+3) DSPLAY DETAILS OF EMPLOYEE WHOSE DESIGNATION IS CEO
+
+mysql> select * from employee3 where designation='ceo';
++-----+---------------+-------------+--------+-----------------+--------------------+--------+----------+
+| eno | ename         | designation | salary | date_of_joining | email              | e_city | phone_no |
++-----+---------------+-------------+--------+-----------------+--------------------+--------+----------+
+|   3 | miss.harshada | ceo         | 161500 | 11/08/2003      | harshada@gmail.com | pune   |        0 |
++-----+---------------+-------------+--------+-----------------+--------------------+--------+----------+
+1 row in set (0.00 sec)
+
+*******************************************************************************************************************************
+
+4) DISPLAY THE Date_of_joining OF EMPLOYEE WHOSE ID=1
+
+mysql> select date_of_joining from employee3 where eno=1;
++-----------------+
+| date_of_joining |
++-----------------+
+| 23/03/2002      |
++-----------------+
+1 row in set (0.00 sec)
+
+*******************************************************************************************************************************
+
+5) DISPLAY THE DETAILS OF EMPLOYEE WHOSE SAALRY IS GREATER THAN 50000 
+
+
+mysql>  select * from employee3 where salary>50000;
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+| eno | ename         | designation          | salary | date_of_joining | email              | e_city | phone_no |
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+|   1 | mr.advait     | sr.assistant manager |  56700 | 23/03/2002      | mradvait@gmail.com | Mumbai |        0 |
+|   3 | miss.harshada | ceo                  | 161500 | 11/08/2003      | harshada@gmail.com | pune   |        0 |
+|   4 | Mr.Roy        | manager              |  70000 | 15/06/2019      | mr.roy@gmail.com   | Mumbai | 12345678 |
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+3 rows in set (0.07 sec)
+
+*****************************************************************************************************************************************
+
+6) DISPLAY THE DETAILS OF EMPLOYEE WHOSE SAALRY IS LESS THAN 200000 
+
+
+mysql>  select * from employee3 where salary<200000;
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+| eno | ename         | designation          | salary | date_of_joining | email              | e_city | phone_no |
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+|   1 | mr.advait     | sr.assistant manager |  56700 | 23/03/2002      | mradvait@gmail.com | Mumbai |        0 |
+|   2 | mr.Raghav     | sr.manager           |  44100 | 23/03/2003      | mrraghav@gmail.com | pune   |        0 |
+|   3 | miss.harshada | ceo                  | 161500 | 11/08/2003      | harshada@gmail.com | pune   |        0 |
+|   4 | Mr.Roy        | manager              |  70000 | 15/06/2019      | mr.roy@gmail.com   | Mumbai | 12345678 |
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+4 rows in set (0.00 sec)
+
+
+**************************************************************************************************************************************
+
+7) DISPLAY THE DETAILS OF EMPLOYEE WHOSE SAALRY IS GREATER THAN 56700 
+
+mysql>  select * from employee3 where salary>56700;
++-----+---------------+-------------+--------+-----------------+--------------------+--------+----------+
+| eno | ename         | designation | salary | date_of_joining | email              | e_city | phone_no |
++-----+---------------+-------------+--------+-----------------+--------------------+--------+----------+
+|   3 | miss.harshada | ceo         | 161500 | 11/08/2003      | harshada@gmail.com | pune   |        0 |
+|   4 | Mr.Roy        | manager     |  70000 | 15/06/2019      | mr.roy@gmail.com   | Mumbai | 12345678 |
++-----+---------------+-------------+--------+-----------------+--------------------+--------+----------+
+2 rows in set (0.00 sec)
+
+***************************************************************************************************************************************
+
+8) DISPLAY THE DETAILS OF EMPLOYEE WHOSE SAALRY IS GREATER THAN EQUAL TO  56700 
+
+mysql>  select * from employee3 where salary>=56700;
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+| eno | ename         | designation          | salary | date_of_joining | email              | e_city | phone_no |
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+|   1 | mr.advait     | sr.assistant manager |  56700 | 23/03/2002      | mradvait@gmail.com | Mumbai |        0 |
+|   3 | miss.harshada | ceo                  | 161500 | 11/08/2003      | harshada@gmail.com | pune   |        0 |
+|   4 | Mr.Roy        | manager              |  70000 | 15/06/2019      | mr.roy@gmail.com   | Mumbai | 12345678 |
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+3 rows in set (0.00 sec)
+
+***************************************************************************************************************************************
+
+9)DISPLAY THE DETAILS OF EMPLOYEE WHOSE SALARY IS >=100000 AND DESIGNATION IS 'CEO'
+
+mysql> select * from employee3 where salary>=100000 and designation='ceo';
++-----+---------------+-------------+--------+-----------------+--------------------+--------+----------+
+| eno | ename         | designation | salary | date_of_joining | email              | e_city | phone_no |
++-----+---------------+-------------+--------+-----------------+--------------------+--------+----------+
+|   3 | miss.harshada | ceo         | 161500 | 11/08/2003      | harshada@gmail.com | pune   |        0 |
++-----+---------------+-------------+--------+-----------------+--------------------+--------+----------+
+1 row in set (0.00 sec)
+
+*************************************************************************************************************************************
+10) DISPLAY ENAME OF EMPLYEE WHERE CITY IS PUNE OR MUMBAI
+
+mysql> Select ename from employee3 where e_city='pune' or e_city='Mumbai';
++---------------+
+| ename         |
++---------------+
+| mr.advait     |
+| mr.Raghav     |
+| miss.harshada |
+| Mr.Roy        |
++---------------+
+4 rows in set (0.00 sec)
+***********************************************************************************************************************************
+
+11)
+
+mysql>  select * from employee3 where salary>50000 and (designation='manager' or designation ='ceo');
++-----+---------------+-------------+--------+-----------------+--------------------+--------+----------+
+| eno | ename         | designation | salary | date_of_joining | email              | e_city | phone_no |
++-----+---------------+-------------+--------+-----------------+--------------------+--------+----------+
+|   3 | miss.harshada | ceo         | 161500 | 11/08/2003      | harshada@gmail.com | pune   |        0 |
+|   4 | Mr.Roy        | manager     |  70000 | 15/06/2019      | mr.roy@gmail.com   | Mumbai | 12345678 |
++-----+---------------+-------------+--------+-----------------+--------------------+--------+----------+
+2 rows in set (0.00 sec)
+
+************************************************************************************************************************************
+
+12)
+
+mysql> update employee3 set salary=salary+(salary*0.05) where salary>55000 or phone_no=12345678;
+Query OK, 3 rows affected (0.07 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
+mysql> select * from employee3;
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+| eno | ename         | designation          | salary | date_of_joining | email              | e_city | phone_no |
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+|   1 | mr.advait     | sr.assistant manager |  59535 | 23/03/2002      | mradvait@gmail.com | Mumbai |        0 |
+|   2 | mr.Raghav     | sr.manager           |  44100 | 23/03/2003      | mrraghav@gmail.com | pune   |        0 |
+|   3 | miss.harshada | ceo                  | 169575 | 11/08/2003      | harshada@gmail.com | pune   |        0 |
+|   4 | Mr.Roy        | manager              |  73500 | 15/06/2019      | mr.roy@gmail.com   | Mumbai | 12345678 |
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+4 rows in set (0.00 sec)
+
+***************************************************************************************************************************************
+
+13)
+
+mysql> update employee3 set salary=salary+(salary*0.05) where salary>55000 or phone_no=12345678;
+Query OK, 3 rows affected (0.07 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
+mysql> select * from employee3;
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+| eno | ename         | designation          | salary | date_of_joining | email              | e_city | phone_no |
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+|   1 | mr.advait     | sr.assistant manager |  59535 | 23/03/2002      | mradvait@gmail.com | Mumbai |        0 |
+|   2 | mr.Raghav     | sr.manager           |  44100 | 23/03/2003      | mrraghav@gmail.com | pune   |        0 |
+|   3 | miss.harshada | ceo                  | 169575 | 11/08/2003      | harshada@gmail.com | pune   |        0 |
+|   4 | Mr.Roy        | manager              |  73500 | 15/06/2019      | mr.roy@gmail.com   | Mumbai | 12345678 |
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+4 rows in set (0.00 sec)
+
+**********************************************************************************************************************************
+
+14)
+
+mysql>  Delete from employee3 where eno>=5;
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> select * from employee3;
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+| eno | ename         | designation          | salary | date_of_joining | email              | e_city | phone_no |
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+|   1 | mr.advait     | sr.assistant manager |  59535 | 23/03/2002      | mradvait@gmail.com | Mumbai |        0 |
+|   2 | mr.Raghav     | sr.manager           |  44100 | 23/03/2003      | mrraghav@gmail.com | pune   |        0 |
+|   3 | miss.harshada | ceo                  | 169575 | 11/08/2003      | harshada@gmail.com | pune   |        0 |
+|   4 | Mr.Roy        | manager              |  73500 | 15/06/2019      | mr.roy@gmail.com   | Mumbai | 12345678 |
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+4 rows in set (0.00 sec)
+
+************************************************************************************************************************************
+
+15)
+
+mysql>  Select distinct e_city from employee3;
++--------+
+| e_city |
++--------+
+| Mumbai |
+| pune   |
++--------+
+2 rows in set (0.07 sec)
+
+**********************************************************************************************************************************
+16)
+
+mysql> Select distinct date_of_joining from employee3;
++-----------------+
+| date_of_joining |
++-----------------+
+| 23/03/2002      |
+| 23/03/2003      |
+| 11/08/2003      |
+| 15/06/2019      |
++-----------------+
+4 rows in set (0.00 sec)
+
+**********************************************************************************************************************************
+
+17)
+
+mysql> Select distinct e_city from employee3 where designation='ceo';
++--------+
+| e_city |
++--------+
+| pune   |
++--------+
+1 row in set (0.00 sec)
+
+************************************************************************************************************************************
+
+18)
+
+mysql>  Select ename from employee3 where eno between 1 and 5 or ename='mr.advait';
++---------------+
+| ename         |
++---------------+
+| mr.advait     |
+| mr.Raghav     |
+| miss.harshada |
+| Mr.Roy        |
++---------------+
+***********************************************************************************************************************************
+
+19)
+
+mysql> Update employee3 set e_city='pune' where salary between 50000 and 100000;
+Query OK, 2 rows affected (0.06 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select * from employee3;
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+| eno | ename         | designation          | salary | date_of_joining | email              | e_city | phone_no |
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+|   1 | mr.advait     | sr.assistant manager |  59535 | 23/03/2002      | mradvait@gmail.com | pune   |        0 |
+|   2 | mr.Raghav     | sr.manager           |  44100 | 23/03/2003      | mrraghav@gmail.com | pune   |        0 |
+|   3 | miss.harshada | ceo                  | 169575 | 11/08/2003      | harshada@gmail.com | pune   |        0 |
+|   4 | Mr.Roy        | manager              |  73500 | 15/06/2019      | mr.roy@gmail.com   | pune   | 12345678 |
++-----+---------------+----------------------+--------+-----------------+--------------------+--------+----------+
+4 rows in set (0.00 sec)
+
+********************************************************************************************************************************

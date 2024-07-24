@@ -1,0 +1,222 @@
+1)============= 
+create table student2(roll int primary key,name varchar(10) not null,per float,address varchar(20) not null
+    -> );
+Query OK, 0 rows affected (0.15 sec)
+
+mysql> desc student2;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| roll    | int         | NO   | PRI | NULL    |       |
+| name    | varchar(10) | NO   |     | NULL    |       |
+| per     | float       | YES  |     | NULL    |       |
+| address | varchar(20) | NO   |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.10 sec)
+
+mysql> insert into student2(roll , name, per, address) values(1,'harshada',89,'bhigwan');
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into student2(roll , name, per, address) values(2,'tanu',88,'pune');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into student2(roll , name, per, address) values(3,'ram',66,'bmt');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into student2(roll , name, per, address) values(4,'sita',66,'rui');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into student2(roll , name, per, address) values(5,'siya',64,'loni');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from student2;
++------+----------+------+---------+
+| roll | name     | per  | address |
++------+----------+------+---------+
+|    1 | harshada |   89 | bhigwan |
+|    2 | tanu     |   88 | pune    |
+|    3 | ram      |   66 | bmt     |
+|    4 | sita     |   66 | rui     |
+|    5 | siya     |   64 | loni    |
++------+----------+------+---------+
+5 rows in set (0.07 sec)
+
+***********************************************************************************************************************************************************************************
+2)===========
+mysql> create table Employee1(eid int primary key,ename varchar(10) not null,salary varchar(10) not null,designation varchar(20) not null);
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> desc Employee1;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| eid         | int         | NO   | PRI | NULL    |       |
+| ename       | varchar(10) | NO   |     | NULL    |       |
+| salary      | varchar(10) | NO   |     | NULL    |       |
+| designation | varchar(20) | NO   |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+ insert into employee1(eid , ename, salary, designation) values(101,'siya',15000,'manager');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into employee1(eid , ename, salary, designation) values(102,'harshada',45000,'sr manager');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into employee1(eid , ename, salary, designation) values(103,'harshad',250000,'ceo');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into employee1(eid , ename, salary, designation) values(104,'tejas',25000,'Employee');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into employee1(eid , ename, salary, designation) values(105,'tanu',35000,'team leader');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select * from employee1;
++-----+----------+--------+-------------+
+| eid | ename    | salary | designation |
++-----+----------+--------+-------------+
+| 101 | siya     | 15000  | manager     |
+| 102 | harshada | 45000  | sr manager  |
+| 103 | harshad  | 250000 | ceo         |
+| 104 | tejas    | 25000  | Employee    |
+| 105 | tanu     | 35000  | team leader |
++-----+----------+--------+-------------+
+5 rows in set (0.00 sec)
+********************************************************************************************************************************************************************************
+
+3)==========
+
+ create table doctor1(did int primary key,dname varchar(10) not null,email varchar(10) not null,phoneno varchar(20) not null, salary varchar(20) not null, specialization varchar(30) not null);
+Query OK, 0 rows affected (0.11 sec)
+
+desc doctor1;
++----------------+-------------+------+-----+---------+-------+
+| Field          | Type        | Null | Key | Default | Extra |
++----------------+-------------+------+-----+---------+-------+
+| did            | int         | NO   | PRI | NULL    |       |
+| dname          | varchar(10) | NO   |     | NULL    |       |
+| email          | varchar(10) | NO   |     | NULL    |       |
+| phoneno        | varchar(20) | NO   |     | NULL    |       |
+| salary         | varchar(20) | NO   |     | NULL    |       |
+| specialization | varchar(30) | NO   |     | NULL    |       |
++----------------+-------------+------+-----+---------+-------+
+
+
+mysql> insert into doctor1(did , dname, email, phoneno,salary,specialization) values(11,'harshada','harshada@gmail.com','56465686','350000','MD');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into doctor1(did , dname, email, phoneno,salary,specialization) values(12,'tejas','tejas@gmail.com','564656996','35000','Mbbs');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into doctor1(did , dname, email, phoneno,salary,specialization) values(13,'namrata','namrata@gmail.com','6786576543','55000','bhms');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into doctor1(did , dname, email, phoneno,salary,specialization) values(14,'tanjila','tanjila@gmail.com','6786576547','5500','nurse');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into doctor1(did , dname, email, phoneno,salary,specialization) values(15,'namrata','namrata@gmail.com','6786576546','55000','mbbs');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select * from doctor1;
++-----+----------+--------------------+------------+--------+----------------+
+| did | dname    | email              | phoneno    | salary | specialization |
++-----+----------+--------------------+------------+--------+----------------+
+|  11 | harshada | harshada@gmail.com | 56465686   | 350000 | MD             |
+|  12 | tejas    | tejas@gmail.com    | 564656996  | 35000  | Mbbs           |
+|  13 | namrata  | namrata@gmail.com  | 6786576543 | 55000  | bhms           |
+|  14 | tanjila  | tanjila@gmail.com  | 6786576547 | 5500   | nurse          |
+|  15 | namrata  | namrata@gmail.com  | 6786576546 | 55000  | mbbs           |
++-----+----------+--------------------+------------+--------+----------------+
+5 rows in set (0.00 sec)
+
+**********************************************************************************************************************************************************************************
+4)==
+
+
+ create table book1(bid int primary key,bname varchar(10) not null,author varchar(10) not null,publication varchar(20) not null, price int not null);
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> desc book1;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| bid         | int         | NO   | PRI | NULL    |       |
+| bname       | varchar(10) | NO   |     | NULL    |       |
+| author      | varchar(10) | NO   |     | NULL    |       |
+| publication | varchar(20) | NO   |     | NULL    |       |
+| price       | int         | NO   |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+insert into book1(bid , bname, author, publication,price) values(1,'python','guido van russam','vision','550');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into book1(bid , bname, author, publication,price) values(2,'c','denis ritchi','vision','450');
+Query OK, 1 row affected (0.01 sec)
+
+ insert into book1(bid , bname, author, publication,price) values(3,'junglebook','harshada','nirali','350');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into book1(bid , bname, author, publication,price) values(4,'dream 11','tanjila','nirali','250');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into book1(bid , bname, author, publication,price) values(5,'java','tejas','nirali','50');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select*from book1;
++-----+------------+------------------+-------------+-------+
+| bid | bname      | author           | publication | price |
++-----+------------+------------------+-------------+-------+
+|   1 | python     | guido van russam | vision      |   550 |
+|   2 | c          | denis ritchi     | vision      |   450 |
+|   3 | junglebook | harshada         | nirali      |   350 |
+|   4 | dream 11   | tanjila          | nirali      |   250 |
+|   5 | java       | tejas            | nirali      |    50 |
++-----+------------+------------------+-------------+-------+
+5 rows in set (0.00 sec)
+
+************************************************************************************************************************************************************************
+
+5)=======
+
+ create table patient1(pid int primary key,pname varchar(10) not null,address varchar(60) not null,disease varchar(20) not null, test varchar(30) not null);
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> desc patient1;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| pid     | int         | NO   | PRI | NULL    |       |
+| pname   | varchar(10) | NO   |     | NULL    |       |
+| address | varchar(60) | NO   |     | NULL    |       |
+| disease | varchar(20) | NO   |     | NULL    |       |
+| test    | varchar(30) | NO   |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+insert into patient1(pid , pname, address, disease,test) values(1,'harshada','pune','corona','negative');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into patient1(pid , pname, address, disease,test) values(2,'tanjila','karad','zika','positive');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into patient1(pid , pname, address, disease,test) values(3,'namrata','bmt','fever','urine');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into patient1(pid , pname, address, disease,test) values(4,'nima','bmt','fever','blood');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into patient1(pid , pname, address, disease,test) values(5,'nita','rui','malaria','positive');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select*from patient1;
++-----+----------+---------+---------+----------+
+| pid | pname    | address | disease | test     |
++-----+----------+---------+---------+----------+
+|   1 | harshada | pune    | corona  | negative |
+|   2 | tanjila  | karad   | zika    | positive |
+|   3 | namrata  | bmt     | fever   | urine    |
+|   4 | nima     | bmt     | fever   | blood    |
+|   5 | nita     | rui     | malaria | positive |
++-----+----------+---------+---------+----------+
+***************************************************************************************************************************************************************
